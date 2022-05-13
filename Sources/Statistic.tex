@@ -1,0 +1,196 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Probability and Statistics Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+  \begin{minipage}{0.5\textwidth}
+    \begin{small}
+       I suppose this could be a quote about how ice has changed? When in doubt, look at the stats
+    \end{small}
+  \end{minipage}
+  \vspace{0.5cm}
+\end{center}
+
+\noindent The statistic quantities returned during the analysis of the broadband noise 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction to Statistical Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% this may not be the best name?
+
+A broadband analysis of the ambient sound level (ANL) recorded by the SHRUS was performed using the data from SHRU5. To keep consistency with \cite{BonnelMain}, the data for this analysis comes from SHRU5 as it had the least self noise compared to other SHRUS. Each band was 50 Hz wide and centered on frequencies from 50 to 1900, 50 Hz apart for a total of 40 frequency bands bands. 
+\begin{enumerate}
+\item  Why choose the 50-1900 band? The original sampling rate of the SHRUS is $f_{s}$ 3906.2 Hz so by the Nyquist sampling frequency, the maximum reliable frequency that can be analysed is 1900.
+\item While the original paper examined a frequency band around 300 Hz of 250-350 Hz, It can be assumed that the
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Probability and Statistics Methods and Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ambient Noise Histogram}
+\textbf{Description: }
+This is an image of one histogram ranging of the ambient noise level at each bin of time from 50 to 1900 Hz. The y axis is the count of the (probability distributed function) pdf normalized histogram bin, the x-axis is the ambient noise level (ANL) in dB referenced to  $1 \mu Pa/Hz$. The blue histograms are ice with duct, the red buckets are ice without the duct, and the yellow bucket is no ice and no duct. This coloring convention by environmental  hold for all statistic figures. The number in the bins isn’t as important as the distribution of the histograms. 
+
+\textbf{Analysis: }
+There is a general trend of shifting down in ANL across all frequencies, with 50 Hz’s no ice being the loudest above 100 dB and ice without duct being the quietest at about 50 dB. It would appear that the quietest ambient under ice sound is about 55 dB and is quietest in the ice without duct bins. Loudest is No Ice
+In terms of shape, the 'no ice' condition histogram is more normal or Gaussian in form over most of the frequencies. Ice with duct (blue) in normal in shape from 50 to about 550 Hz, above 600 Hz is begins to be skewed right. Ice without duct (red) is normal from 50 to about 250 Hz, after which is becomes skewed right as well.
+The largest stratification between the three bins are between the frequencies of 150 Hz to 500 Hz
+
+\textbf{What does this mean?}
+It is commonly said that it is quiet under ice, and this figure directly reflects that through the distribution of sound levels in these three different bins. Metrics such as mean ambient noise level and pairwise difference reflect the differences between these sound metrics. Similar to the original paper's 300 Hz histogram\autocite{BonnelMain}, there are three distinct peaks of ANL at 500 Hz. This phenomena of three 
+
+\textbf{chang this fig to be closer to peaks, unlock lims}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Figures/ambient_hist_450_550.jpg}
+\caption{Histogram of normalized ANL at 500 Hz band for conditions Ice with duct (blue) }
+\label{fig_hist500}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% order above?
+\subsection{Ambient Noise Histogram Comparison}
+For this section, four fistograms at frequencies lwo mid mid high will be compared so we can see what happs
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Average ANL}
+\textbf{Description}
+This Figure shows the average ambient noise level generated using the mean function of MATLAB. ANL in dB referenced to $ 1 \mu Pa^{2}/Hz$ are the units of the y axis and frequency is on the x axis. The averages for ice with duct are in blue, the averages for ice without duct are in red, and the no ice is in yellow
+
+\textbf{Analysis}
+The general negative trend is present across all three types, with no ice behaving linearly and ice with/without duct behaving more exponentially
+In this band, and with these environmental conditions, as frequency increases, ANL decreases. Beyond 1900, the SHRUs were above the Nyquist frequency necessary to record samples so that data isn’t valid. 
+There are little spikes every four points or so in the data, probably caused by the n-50 band being slightly more active at that point.
+
+\textbf{What does this Mean}
+What’s really important, and what we want to take away from this Figure 2 is WHY the ANL decreases with frequency. It’s probably because most of the ambient noise in the Arctic when there is ice is generated by the movement of the ice itself - grinding, slipping, and shearing. When there is no ice, then there is shipping, which has lots of ambient propeller noise
+Things to consider: what else functions in these bandwidths of activity, like whales and other biologic factors? Is what we do going to negatively impact them?
+
+add grid, cutoff earlier
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Figures/Average_ANL_cutoff.jpg}
+\caption{Average ANL at frequencies from 50 to 1900 Hz.}
+\label{fig_avg_anl}
+\end{figure}
+
+\subsection{Total Variation Distance}
+\textbf{Description}
+Total variation distance is a distance in probability theory and is the absolute area between two curves. The equation is 
+
+% equation for infinite
+\begin{equation} \label{totalvardist}
+\delta(,Q)=sup_{A\epsilon F}\mid P(A)-Q(A)\mid   
+\end{equation}
+
+where P and Q are probability measures on a sigma-algebra F of subsets of the sample space omega, Ω. The sigma algebra (σ-algebra/σ-filed) of a larger set A is a collection of subsets called F. For a finite data set such as this, the total variation distance is related to the L1 norm (the 1st norm for a finite dimension vector space) by the following identity:
+
+% equation for finite
+\begin{equation} \label{eq:finitetotvar}
+\delta(P,Q)=\frac{1}{2}\mid P(\omega)-Q(\omega) \mid 
+\end{equation}
+
+Where $\omega$ is the finite subset of the sample space omega: $\Omega$
+Total variation distance looks at all the data across all the frequencies, with the count of each bin as a proportion. It takes every value of the probability of that bin and takes the sum of the absolute difference. The range of this value for total variation distance is not constrained, and represents the “largest possible difference between the probabilities that the two probability distributions can assign to the same event,” which we can approximately translate to the largest possible difference in occurrence that a frequency can have between the two acoustic conditions. It is NOT a measure of ANL in dB but probability of occurrence between two conditions. 1 means 100\% different, 0 means 0\% different.
+This data set was normalized in the function 'histcounts' using ‘Normalization’, ‘pdf’. But because its probability does that no longer become an issue
+For the purposes of this analysis, the total variation distance uses the following equation: 
+
+% equation used for our annalysis
+\begin{equation} \label{eq:actualtotvar}
+\delta(Duct, No Duct)=\frac{1}{2} \Sigma \mid Duct(f) - No Duct(f) \mid 
+\end{equation}
+
+Where N\_duct is the number in each bin of the duct condition, and N\_no\_duct is the number in each bin of the no duct condition. The integer i is equivalent to the subset of the entire set of data, and in this case refers to the specific frequency of the subset. One number is returned by this equation that sums up the total variation distance between the two conditions. The values passed to the 'histcounts' function were normalized pdf.
+
+
+\textbf{Analysis}
+This metric shows the probability between each data set overlapping. Since totally variation distance uses all of the data points, it only makes sense to view this frequency by frequency. The highest variation distance between the conditions ‘Ice with Duct and Ice Without duct’ occurs at 50 Hz at a value of 0.44. The highest variation distance between “ice with Duct and No Ice” occurs at 600 Hz with a distance of 0.63. The highest variation distance for “no-ice and no-duct” occurs at 600 Hz and at a value of 0.72. 
+
+\textbf{What does this Mean?}
+Interpreting this graph is kind of difficult, but the easiest way to interpret it is by acoustic environment. There is a high difference between “no ice and no duct”; a mid level difference between “ice with duct and no ice”. There is the least amount of difference between “ice with duct and no duct” - the sound conditions are most similar here.
+Yellow = really different conditions. Blue = more similar conditions
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Figures/recolor_total_var_dist_norm_pdf.jpg}
+\caption{Total Variation distance frequencies from 50 to 1900 Hz.}
+\label{fig_totvardist}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pairwise Difference}
+\textbf{Description}
+Pairwise difference is the length between the two bins at the same frequency between the two noise types being analyzed. It is different from total variation distance in that this metric is not probability but is actually the difference between the peak of each acoustic condition. Pairwise difference in the context of this analysis means the difference between each condition's histogram peaks or mode, the maximum probability occurrence of hydrophones. Because the data is being compared  is why the resulting parameter is in terms of Hz, and not a probability.
+The pairwise difference was calculated using the following equation:
+
+%pair_dist_duct_noduct(i)=edges_duct(ind_duct(i))-edges_no_duct(ind_no_duct(i))
+\[Pd(f)=mode_{condition}(f)-mode_{condition}(f)\] 	% this is not actual stat distance 
+% argmax of hist-argmaxofhist, repeat equation
+
+Where mode\_{condition} refers to the ANL bin of maximum count of that histogram, \textit{f} is the frequency of interest, and edges*. The differences are between the three conditions and are made to product positive differences (absolutes)
+The xaxis of this graph is frequency in Hz, the y-axis is the difference in ANL in dB. Red denotes the difference between “no ice and ice without duct”, the yellow denotes the difference between “no ice and ice without duct” and blue denotes the difference between “ice with duct and ice without duct”
+
+\textbf{Analysis}
+The conditions with the highest overall difference are “no ice and no duct”. The condition with the lowest overall difference is “ice with duct and no duct”. The highest difference is at 450 Hz with a 23.8 db difference. The lowest difference is at 1400,1600-1800 with a difference of 0.
+“No ice/ice no duct” goes up then decreases after the 450 peak; “no ice/ ice no duct” increases from 50 to 1100 Hz and mostly plateaus after. “Ice with duct and ice without duct” peaks from 200-500 then drops, going to zero in the higher frequencies
+
+\textbf{What does this Mean?}
+Similar to above, there is the least amount of difference between “Ice with duct and ice without duct.” There is the biggest difference between “ice no duct and no ice”. This means that the conditions ice with duct and ice no duct are very similar, while the conditions “ice no duct and no ice” are the most different in ANL. 
+Yellow = high difference in condition - Blue = very similar condition. Peak band for all 100-900
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Figures/recolor_pairwise_dist_ANLs.jpg}
+\caption{Pairwise distance for frequencies from 50 to 1900 Hz.}
+\label{fig_pairwisedist}
+\end{figure}
+
+\subsection{ANL Modes}
+\textbf{Description}
+This is an image of the mode or most highly occurring bin of each histogram and therefore the approximate ‘most likely occurring’ sound level for that frequency
+
+\textbf{Analysis}
+There is a higher occurrence of higher dB at the lowest frequencies, which moves down thereafter
+ Both the Blue Line and the red line reach down around 800 Hertz and stay low at that level.
+As frequency increases, the mode of each decreases
+
+\textbf{What does this Mean?}
+Lower frequencies are louder/noisier, but as we go up in frequency Both ice with duct and eyes without duct Plateau at about 55 decibels, making this the Ambient sound noise level for these frequencies
+On the other hand, it can be seen that it is significantly louder when there is no ice present in the Arctic with sound levels plateauing around 75 decibels
+Louder without ice. Quieter under ice
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Figures/mode_ANL_allfreqs.jpg}
+\caption{Mode of ANL for frequencies from 50 to 1900 Hz.}
+\label{fig_mode}
+\end{figure}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Correlation Between Frequencies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{probs a bad way to start, fix later }Now, let's take a look at the how the frequencies are related to each other, the correlation between frequencies. In \autoref{fig_freq_corr} the correlation between each frequency is shown for each of the three environmental conditions. It is worth noting that the p-value for each of the correlations is an identity matrix, so the likely hood that the null hypothesis is true is zero percent, expect when the same frequency is compared against itself when the p-value is 1. The correlation values range from 0.4758 under the 'ice without duct' condition to 1 when frequencies are compared against themselves. 
+
+Other than the lowest frequencies, correlation between almost all of the frequency bands is quite high. This suggests that the acoustic drivers of the Arctic's ANL are largely broadband in nature. Each environmental condition does act differently when high and low frequencies are compared to each other, resulting in different shapes of the correlation graphs. The 'no ice' condition has distinct bands of correlation around 0.7 and 0.9 for the 100-200 Hz and 200-300 Hz comparisons; elsewhere is is ~1, resulting in a boxy high correlation block. The 'ice without duct' condition  
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.38]{Figures/corr_all_1x3.jpg}
+\caption{Correlation between broadband frequencies for }
+\label{fig_freq_corr}
+\end{figure}
+
+
+
+
+% the end of statistic section
+\section{Probability and Statistics Conclusions}
+% a summary of the results from above 'the what it means' section

@@ -1,4 +1,6 @@
 \documentclass{mimosis}
+\graphicspath{ {./Figures/} }
+\usepackage{float}
 
 % letter size
 \KOMAoptions{paper=letter}
@@ -14,7 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{\textbf{This is a title \textit{about sound under ice} in the Arctic}}
-\author{ENS Kathryn Fung}
+\author{LTJG Kathryn Fung}
 \date{August 6, 2022}
 
 \begin{document}
@@ -28,11 +30,11 @@
   \tableofcontents
   \listoffigures
   \listoftables
-  
+  % table of contents
   \include{Sources/Introduction}
-  
-  \include{Sources/StatTheory}
-    \include{Sources/StatResult}
+  \include{Sources/Statistic}
+  \include{Sources/Spacial}
+  \include{Sources/Conclusion}
 
 % This ensures that the subsequent sections are being included as root
 % items in the bookmark structure of your PDF reader.
