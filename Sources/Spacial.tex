@@ -3,20 +3,15 @@
 \chapter{Spacial Analysis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-  \begin{minipage}{0.5\textwidth}
-    \begin{small}
-       If ice moves, does it make a sound? Yes. Very yes
-    \end{small}
-  \end{minipage}
-  \vspace{0.5cm}
-\end{center}
-
-\noindent This an introduction to the Theory of Spacial Correlation.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction to Spacial Analysis}
-While looking at a broadband range of frequencies makes sense for a statistical analysis, looking at the spatial correlation of 40 different frequencies on a map would be cluttered. For ease of computing and viewing, the spatial correlation analysis is limited to the frequencies of 300 Hz, 500 Hz, 1000 Hz, and 1500 Hz. While a band around 50 Hz was examined, the very low frequency behaved much differently than most others. (this is reflected in the statistic analysis as well as the 50 Hz data points are very high/different and possible also have different acoustic drivers) I would say a lot of this section is a continuation of the work done in a previous iteration of the data in my lab. \autocite{BonnelMain}.
+
+% nmot difference between last section and this section, were gonna focus a lot more on environment os buckle up
+In \autoref{sec_probsnstat}, ambient noise was split into three distinct acoustic environments in order to asses the overall attributes of each. With the numerical attributes of each environments differing by frequency, it is likely the causes and drivers of this ambient noise differ as well. Acoustic forces behind sound under ice are not the same as the primary powers behind sound in an ice free Arctic ocean. \footcite[]{icesound} This section will focus on the relationship between ambient sound under ice and the movement of ice itself.
+
+While looking at a broadband range of frequencies makes sense for a statistical analysis, looking at the spatial correlation of 38 different frequencies on a map would be cluttered. For ease of computing and viewing, the spatial correlation analysis is limited to the frequencies of 300 Hz, 500 Hz, 1000 Hz, and 1500 Hz. 300 Hz, as opposed to 250 Hz, was retained for comparison with the original analysis. While a band around 50 Hz was examined, the low frequencies behaved much differently than most others. This is reflected in the statistic analysis above as the 50 Hz data points are usually different and and it could be assumed the low frequencies have different acoustic drivers. 
+
+A significant amount of this section is a continuation of the work done in a previous iteration of the data in \footcite[]{BonnelMain}. Expanding the frequencies examined in spacial correlation analysis emphasizes that all these frequencies are highly related in both
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % seriouslt why do all my titles sound terrible
@@ -24,21 +19,23 @@ While looking at a broadband range of frequencies makes sense for a statistical 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-USE CORRELATION Equation in JASA as well
-Questions I want to answer/
-
-%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Correlation between Ice Drift and ANL}
 
 Introduce the theory behind 
 \begin{enumerate}
-\item  ice drift as a vector of speed that we changed into movement/day from eumetsat osiaf
+\item  ice drift as a vector of speed that we changed into movement/day from EUMETSAT OSIAF
 \item  how correlation between ice drift and anl is calculated
 \item  the time split up and specific ice condition used
 \item 
 \end{enumerate}
 
 
+USE CORRELATION Equation in JASA as well
+Questions I want to answer/
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Correlation across Frequencies}
 Using the same procedures as in the 'Correlation between Ice Drift and ANL' section
 
@@ -58,7 +55,7 @@ this is the what does this mean part for the 1000/1500 spacial correlation analy
 \label{fig_1000_1500corr}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Correlation across Hydrophones (SHRUs)}
 
 \textbf{Description}
@@ -85,6 +82,8 @@ It is very important to not that \textit{ice is more of a line source or a plane
 \label{fig_1500corr}
 \end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spacial Correlation Distance Anomaly}
 \textbf{reminder: this one has the super high distance}
 \textbf{Description}
@@ -101,7 +100,7 @@ As said in the analysis above, these figures demonstrate a fairly strong correla
 
 \textit{small pvalues are good, it says there a X\% chance that a thing happening is NOT random (reject the null hypothesis)}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Spatial Correlation Between ice drift spread and SHRU5}
 
 \textbf{Description}
@@ -118,6 +117,8 @@ Remove from left to right there appears to be darker and larger, the noting that
 At the most basic level, ice movement correlates with noise
 And the general movement is from west to east
 
+
+% pperhaps introduct the plane source tl equation?
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{Figures/avg_map_grayscale.jpg}
@@ -125,7 +126,7 @@ And the general movement is from west to east
 \label{fig_maxcorr_location}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Area of Correlation Spread and Maximum  through time}
 \textbf{Description}
 This is an image showing the distance between in the maximum correlation and SHRU5 per time instance per frequency
@@ -143,7 +144,7 @@ This is NOT where the sound is coming from, this is the point of highest correla
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{Figures/area_cov_time_corrr.jpg}
-\caption{Are of correlation spread in km^{2} and corresponding maximum correlation value for frequencies 300-1500 Hz}
+\caption{Area of correlation spread in km$^{2}$ and corresponding maximum correlation value for frequencies 300-1500 Hz}
 \label{fig_maxcorr_dist}
 \end{figure}
 
@@ -157,6 +158,7 @@ This is NOT where the sound is coming from, this is the point of highest correla
 \caption{Daily ice drift in km at SHUR5.}
 \label{fig_totalice}
 \end{figure}
+
 \textbf{What is this}
 this is an image of the total, non-normalized daily ice drift in kilometers from 2016Sep to 2017Sep. The highlighted dot is the second highest point of motion on 30DEC2016 with 53.36 km. The highest point occurs in 31October2016 and is 59.195 km. The ice reaches a minimum in September and reforms through October and November, so I would want to check the coverage at this point too. It may be that the drift seen in October is the ice just growing. For the December point, it is assumed that the Arctic is at full winter ice coverage. 
 \textbf{What does it mean}
@@ -164,14 +166,24 @@ The ice moved a significant amount on this day in this area, so likely is was mo
 It cooled a bit from the 29-30 Jan 2016, from 252.6 (-20 C) K on the 27 to 245.2 (-28 C) K on the 30
 
 
+\subsection{Distribution of Ice correlation}
 
+% turn the grid on for errorbars
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{Figures/errorbars_tiled.jpg}
+\caption{Daily ice drift in km at SHUR5.}
+\label{fig_totalice}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Spacial Analysis Conclusions} %summary? conclusion? idk what to call
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Here, sum up the 'what does this mean of the above'
+%Here, sum up the 'what does this mean of the above'
 %
 \subsection{Correlation between Ice Drift and ANL}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
