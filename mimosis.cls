@@ -318,7 +318,7 @@
   maxcitenames = 1,
   sortcites    = true,
   citestyle    = authortitle-icomp,
-  bibstyle     = nature,
+  bibstyle     = ieee,
   uniquelist   = false,
   ]{biblatex}
 
