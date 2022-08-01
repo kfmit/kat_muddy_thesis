@@ -1,8 +1,12 @@
 \documentclass{mimosis}
 \graphicspath{ {./Figures/} }
+\graphicspath{ {./Figures/appdx_figs} }
 \usepackage{float}
 \usepackage{setspace}
+\usepackage{subcaption}
 \usepackage{gensymb}
+\usepackage{alphalph}
+
 %\usepackage{cite}
 
 
@@ -42,6 +46,8 @@
   \include{Sources/Spacial}
   \include{Sources/Conclusion}
 
+  \appendix
+  \include{Sources/Appendix}
 % This ensures that the subsequent sections are being included as root
 % items in the bookmark structure of your PDF reader.
 \bookmarksetup{startatroot}
