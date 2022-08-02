@@ -11,7 +11,8 @@
 \LoadClass[a4paper, % KOMA options rewrites this as letter in thesis.tex
            oneside, % switch between oneside (screen) and twoside (binding)
            12pt,
-           cleardoublepage=empty,
+           %cleardoublepage=empty,
+           %cleardoublepage=current,
            numbers=noenddot,
            titlepage,
            toc=bibliography,
@@ -155,7 +156,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{setspace}
-\onehalfspacing
+\doublespacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Tables
