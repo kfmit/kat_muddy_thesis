@@ -318,7 +318,8 @@
   maxbibnames  = 99,
   maxcitenames = 1,
   sortcites    = true,
-  citestyle    = authortitle-icomp,
+  %citestyle    = authortitle-icomp,
+   citestyle    = authoryear-icomp,
   bibstyle     = ieee,
   uniquelist   = false,
   ]{biblatex}
