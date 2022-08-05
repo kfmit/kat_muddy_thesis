@@ -110,7 +110,7 @@ Assuming that the ambient noise had mainly environmental drivers, especially und
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Ice Coverage} \label{intro_env_ice_cov}
 
-Ice coverage (IC) was considered only at the acoustic receiver location. IC data originated from the Integrated Climate Data Center \parencite{kaleschke2001ssm} and is derived from the Special Sensor Microwave Imager (SSM/I), a remote sensor. The dataset is created using the ARTIST Sea Ice algorithm \parencite{spreen2008sea}. It has a daily temporal resolution and a spatial resolution of 12.5 km x 12.5 km. To reduce the influence of weather variations, ICDC applies a 5 day median filter \parencite{kern2010climatology}. IC data is a percentage of the area covered in ice at a grid point in space. These ice coverage percentages were then used to denote environmental time periods in \autoref{intro_env_split}..
+Ice coverage (IC) was considered only at the acoustic receiver location. IC data originated from the Integrated Climate Data Center \parencite{kaleschke2001ssm} and was derived from the Special Sensor Microwave Imager (SSM/I), a remote sensor. The dataset is created using the ARTIST Sea Ice algorithm \parencite{spreen2008sea}. It has a daily temporal resolution and a spatial resolution of 12.5 km x 12.5 km. To reduce the influence of weather variations, ICDC applies a 5 day median filter \parencite{kern2010climatology}. IC data is a percentage of the area covered in ice at a grid point in space. These ice coverage percentages were then used to denote environmental time periods in \autoref{intro_env_split}..
 
 \subsubsection{Ice Drift} \label{intro_env_ice_dri}
 
@@ -124,13 +124,13 @@ Data proving the Beaufort Duct's presence was not found online, as recording its
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Three Acoustic Environments} \label{intro_env_split}
 
-Based on data from the \autoref{intro_env_ice_cov} and \autoref{intro_env_duct}, acoustic data can be separated intro three time segments critical to this study as was done in the preliminary analysis \parencite{Bonnel2021}. Time periods with IC <15\% were deemed 'no ice' and time with IC >85\% were deemed ice covered. The Beaufort duct was assumed to be present from the beginning to the middle of the ice covered period, up until approximately March 8, 2017. \parencite{ballard2020temporal} Intermediate values of ice coverage were omitted, and the corresponding time periods cut out (November 8-23, 2016 and June 22- July 12, 2017).
+Based on data from \autoref{intro_env_info}, acoustic data can be separated intro three time segments critical to this study as was done in the preliminary analysis \parencite{Bonnel2021}. Time periods with IC <15\% were deemed 'no ice' and time with IC >85\% were deemed ice covered. The Beaufort duct was assumed to be present from the beginning to the middle of the ice covered period, up until approximately March 8, 2017. \parencite{ballard2020temporal} Intermediate values of ice coverage were omitted, and the corresponding time periods cut out (November 8-23, 2016 and June 22- July 12, 2017).
 
 For this analysis, the data is split by time into three acoustic environments:
 \begin{enumerate}
     \item{'ice with duct': occurs when there is ice present (IC >85\%) and the Beaufort duct is present. From November 23, 2016 to March 8, 2017}
     \item{'ice without duct': occurs when there is ice present  (IC >85\%) but the Beaufort duct does not exist. From March 9, 2017 to June 22, 2017.    }
-    \item{'no ice': occurs when there is no ice or less than <15\% of ice. This environmental time period covers October 22, 2016-November 8, 2018 to June 30,2017-July 12, 2017. The environmental condition of 'no ice' also means that there is no duct.}
+    \item{'no ice': occurs when there is no ice (IC<15\%). This environmental time period covers October 22, 2016-November 8, 2018 to June 30,2017-July 12, 2017. The environmental condition of 'no ice' also means that there is no duct.}
 \end{enumerate}
 
 These environmental naming conventions are particularly used in the probability and statistics analysis of \autoref{sec_probsnstat} to compare the ambient noise between environments. Occasionally, the moniker 'ice' is used to refer to both 'ice with duct' and 'ice without duct'. The spacial analysis in \autoref{chap_spacial} focuses only on the environment when ice is present, and so encompasses both the 'ice with duct' and 'ice without duct' environments which go from December 1, 2016 to May 30, 2017. 
